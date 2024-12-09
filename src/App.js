@@ -6,6 +6,7 @@ import About from './components/AboutPage';
 import ErrorPage from './components/ErrorPage';
 import AddNote from './components/AddNote';
 import NoteList from './components/NoteList';
+import StopWatch from './components/StopWatch'
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
       		    <NoteList notes={notes} deleteNote={deleteNote} />
     		</div>
 	  } />
+	  <Route path="/stopwatch" element={<StopWatch />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
