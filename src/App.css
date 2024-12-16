@@ -1,3 +1,37 @@
-body{
-    margin: 0px;
+.periodic-table {
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  gap: 5px;
+}
+
+.element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  height: 60px;
+  background-color: lightblue;
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+
+.element small {
+  font-size: 0.7rem;
+}
+
+/* Responsive Design */
+@media (max-aspect-ratio: 1/1) {
+  .periodic-table {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .element {
+    width: 48%;
+    height: auto;
+    margin: 1%;
+    padding: 10px;
+  }
 }

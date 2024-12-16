@@ -1,13 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCloudSun, faCloudMoon } from "@fortawesome/free-solid-svg-icons";
+import '../theme.css'
 
-function Navbar() {
+function Navbar({ theme, toggleTheme }) {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav
+      className='navbar navbar-expand-lg'
+    >
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
+        <Link
+          className="navbar-brand"
+          to="/"
+        >
           Notes App
         </Link>
+        <button onClick={toggleTheme} className="btn">
+          <FontAwesomeIcon
+            icon={theme === "dark" ? faCloudSun : faCloudMoon}
+            size="sm"
+          />
+        </button>
         <button
           className="navbar-toggler"
           type="button"
@@ -22,17 +36,17 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to="/">
+              <Link className="nav-link" to="/" style={{ color: "inherit" }}>
                 Home
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/editor">
+              <Link className="nav-link" to="/editor" style={{ color: "inherit" }}>
                 Editor
               </Link>
             </li>
-	    <li className="nav-item">
-              <Link className="nav-link" to="/about">
+            <li className="nav-item">
+              <Link className="nav-link" to="/about" style={{ color: "inherit" }}>
                 About
               </Link>
             </li>
